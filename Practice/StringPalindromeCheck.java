@@ -1,6 +1,5 @@
 package Practice;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class StringPalindromeCheck {
@@ -12,6 +11,8 @@ public class StringPalindromeCheck {
         String str = scanner.nextLine();
 
         System.out.println(isPalindrome(str));
+
+        scanner.close();
 
     }
 
@@ -38,16 +39,41 @@ public class StringPalindromeCheck {
 //            rev = rev + s.charAt(i);
 //        }
 
-        String rev = "";
-        for(int i=s.length()-1; i>=0; i--){
-            rev = rev + s.charAt(i);
+//        String rev = "";
+//        for(int i=s.length()-1; i>=0; i--){
+//            rev = rev + s.charAt(i);
+//        }
+//
+//        System.out.println("Reversed String: " + rev);
+//
+//        // Compare the original string with
+//        // the reversed string
+//        return s.equals(rev);
+//    }
+
+        int i=0, j = s.length() - 1;
+        // Compare characters while i < j
+        while(i < j){
+            System.out.println(s.charAt(i));
+            System.out.println(s.charAt(j));
+            if(s.charAt(i) != s.charAt(j)){
+                return false;
+            }
+            i++;
+            j--;
         }
-
-        System.out.println("Reversed String: " + rev);
-
-        // Compare the original string with
-        // the reversed string
-        return s.equals(rev);
+        return true;
     }
+
+//
+//        while (i < j) {
+//            if (s.charAt(i) != s.charAt(j)) {
+//                return false;
+//            }
+//            i++;
+//            j--;
+//        }
+//        return true;
+//    }
 
 }
